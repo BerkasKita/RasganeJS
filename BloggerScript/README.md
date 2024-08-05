@@ -38,6 +38,55 @@ document.addEventListener('DOMContentLoaded', () => {
   run_custom_post();
 });
 ```
+
+## List Fungsi
+### BloggerScript
+Mengambil sebagian postingan, hanya bisa mengambil maksimal 150 post.
+```javascript
+const bloggerFeed = new BloggerScript();
+
+bloggerFeed.xhr('https://blog_url.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=20', function(entry) {
+  console.log(entry); //Output Array entry
+});
+```
+
+### BloggerSitemap
+Mengambil seluruh postingan yang ada, bisa mengambil lebih dari 150.
+```javascript
+const bloggerSitemap = new BloggerSitemap();
+
+bloggerSitemap.run('https://blog_url.blogspot.com/feeds/posts/default', function(entry) {
+  console.log(entry); //Output Array Entry
+});
+```
+
+### BloggerRandom
+```javascript
+//Mengambil postingan random, hanya bisa mengambil maksimal 150 post.
+const bloggerRandom = new BloggerRandom({
+//Atur Jumlah Postingan yang ingin di tampilkan maksimal 150
+  'jumlah': 10
+});
+
+bloggerRandom.run('https://blog_url.blogspot.com/feeds/posts/default', function(entry) {
+  console.log(entry); //Output Array Entry
+});
+```
+
+### BloggerRelated
+```javascript
+//Mengambil postingan per category, cocok untuk related post.
+const bloggerRelated = new BloggerRelated({
+  'labels': ['Blogger', 'Otomotif', 'Hiburan'],
+  //Jumlah Post yang akan di ambil, maksimal post yang dapat di ambil adalah jumlah label di kalikan 15, contoh: 15x3 = 45.
+  'jumlah': 10
+});
+
+bloggerRelated.run('https://blog_url.blogspot.com/feeds/posts/default', function(entry) {
+  console.log(entry); //Output Array Entry
+});
+```
+
 ## Material
 ### No Thumbnail
 + `Horizontal` : https://1.bp.blogspot.com/-FReCec7n6RY/YSQPKYQ3GZI/AAAAAAAAALQ/68ope4pW8k0f4nEtHT74JUVroyigkNQtACLcBGAsYHQ/s320/No%2BImage%2BHorizontal.jpg
@@ -105,57 +154,7 @@ let arr_ = entry.filter(item => !item.label.includes('Series'));
 let arr_Chapter = arr_.filter(item => item.label.includes('Chapter'));
 ```
 
-## List Fungsi
-### BloggerScript
-Mengambil sebagian postingan, hanya bisa mengambil maksimal 150 post.
-```javascript
-const bloggerFeed = new BloggerScript();
-
-bloggerFeed.xhr('https://blog_url.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=20', function(entry) {
-  console.log(entry); //Output Array entry
-});
-```
-
-### BloggerSitemap
-Mengambil seluruh postingan yang ada, bisa mengambil lebih dari 150.
-```javascript
-const bloggerSitemap = new BloggerSitemap();
-
-bloggerSitemap.run('https://blog_url.blogspot.com/feeds/posts/default', function(entry) {
-  console.log(entry); //Output Array Entry
-});
-```
-
-### BloggerRandom
-```javascript
-//Mengambil postingan random, hanya bisa mengambil maksimal 150 post.
-const bloggerRandom = new BloggerRandom({
-//Atur Jumlah Postingan yang ingin di tampilkan maksimal 150
-  'jumlah': 10
-});
-
-bloggerRandom.run('https://blog_url.blogspot.com/feeds/posts/default', function(entry) {
-  console.log(entry); //Output Array Entry
-});
-```
-
-### BloggerRelated
-```javascript
-//Mengambil postingan per category, cocok untuk related post.
-const bloggerRelated = new BloggerRelated({
-  'labels': ['Blogger', 'Otomotif', 'Hiburan'],
-  //Jumlah Post yang akan di ambil, maksimal post yang dapat di ambil adalah jumlah label di kalikan 15, contoh: 15x3 = 45.
-  'jumlah': 10
-});
-
-bloggerRelated.run('https://blog_url.blogspot.com/feeds/posts/default', function(entry) {
-  console.log(entry); //Output Array Entry
-});
-```
-
 ## Fungsi warisan
-
-
 ### Fungsi Resize Image
 ```javascript
 const bloggerFeed = new BloggerScript();
