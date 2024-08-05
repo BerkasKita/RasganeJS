@@ -105,7 +105,7 @@ let arr_ = entry.filter(item => !item.label.includes('Series'));
 let arr_Chapter = arr_.filter(item => item.label.includes('Chapter'));
 ```
 
-## List Funsi
+## List Fungsi
 ### BloggerScript
 //Mengambil sebagian postingan, hanya bisa mengambil maksimal 150 post.
 ```javascript
