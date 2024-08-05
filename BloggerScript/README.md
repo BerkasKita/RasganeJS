@@ -1,5 +1,17 @@
 # Panduan BloggerScript v1.2.0 Custom
 ## Sintaks
+### BloggerScript
+Mengambil sebagian postingan, hanya bisa mengambil maksimal 150 post.
+```javascript
+const bloggerFeed = new BloggerScript();
+
+bloggerFeed.xhr('https://blog_url.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=20', function(entry) {
+  console.log(entry); //Output Array entry
+});
+```
+
+yang sering digunakan
+
 ```html
 <div class="class_name"></div>
 ```
@@ -36,17 +48,6 @@ const run_custom_post = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   run_custom_post();
-});
-```
-
-## List Fungsi
-### BloggerScript
-Mengambil sebagian postingan, hanya bisa mengambil maksimal 150 post.
-```javascript
-const bloggerFeed = new BloggerScript();
-
-bloggerFeed.xhr('https://blog_url.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=20', function(entry) {
-  console.log(entry); //Output Array entry
 });
 ```
 
