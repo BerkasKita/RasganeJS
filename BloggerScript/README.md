@@ -105,6 +105,8 @@ let arr_ = entry.filter(item => !item.label.includes('Series'));
 let arr_Chapter = arr_.filter(item => item.label.includes('Chapter'));
 ```
 
+## List Funsi
+### BloggerScript
 //Mengambil sebagian postingan, hanya bisa mengambil maksimal 150 post.
 ```javascript
 const bloggerFeed = new BloggerScript();
@@ -114,6 +116,7 @@ bloggerFeed.xhr('https://blog_url.blogspot.com/feeds/posts/default?alt=json-in-s
 });
 ```
 
+### BloggerSitemap
 ```javascript
 //Mengambil seluruh postingan yang ada, bisa mengambil lebih dari 150.
 const bloggerSitemap = new BloggerSitemap();
@@ -123,6 +126,7 @@ bloggerSitemap.run('https://blog_url.blogspot.com/feeds/posts/default', function
 });
 ```
 
+### BloggerRandom
 ```javascript
 //Mengambil postingan random, hanya bisa mengambil maksimal 150 post.
 const bloggerRandom = new BloggerRandom({
@@ -135,6 +139,7 @@ bloggerRandom.run('https://blog_url.blogspot.com/feeds/posts/default', function(
 });
 ```
 
+### BloggerRelated
 ```javascript
 //Mengambil postingan per category, cocok untuk related post.
 const bloggerRelated = new BloggerRelated({
