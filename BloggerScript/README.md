@@ -107,7 +107,7 @@ let arr_Chapter = arr_.filter(item => item.label.includes('Chapter'));
 
 ## List Fungsi
 ### BloggerScript
-//Mengambil sebagian postingan, hanya bisa mengambil maksimal 150 post.
+Mengambil sebagian postingan, hanya bisa mengambil maksimal 150 post.
 ```javascript
 const bloggerFeed = new BloggerScript();
 
@@ -117,8 +117,8 @@ bloggerFeed.xhr('https://blog_url.blogspot.com/feeds/posts/default?alt=json-in-s
 ```
 
 ### BloggerSitemap
+Mengambil seluruh postingan yang ada, bisa mengambil lebih dari 150.
 ```javascript
-//Mengambil seluruh postingan yang ada, bisa mengambil lebih dari 150.
 const bloggerSitemap = new BloggerSitemap();
 
 bloggerSitemap.run('https://blog_url.blogspot.com/feeds/posts/default', function(entry) {
