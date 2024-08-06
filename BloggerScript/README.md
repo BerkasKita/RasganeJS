@@ -10,10 +10,10 @@ bloggerFeed.xhr('https://blog_url.blogspot.com/feeds/posts/default?alt=json-in-s
 });
 ```
 
-yang sering digunakan
+#### Contoh Single
 
 ```html
-<div class="class_name" data-label="Serie" data-max="6"></div>
+<div class="class_name" data-label="Series" data-max="6"></div>
 ```
 ```javascript
 let custom_post = new BloggerScript(
@@ -44,6 +44,57 @@ const run_custom_post = () => {
     let max = get_location.dataset.max || false;
     custom_post.xhr(`/feeds/posts/default${label_name == false ? '' : `/-/${label_name}`}?alt=json-in-script&max-results=${max == false ? '' : `${max}`}`, get_custom_post);
   }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  run_custom_post();
+});
+```
+
+#### Contoh Multi
+Dengan syarat memiliki CLASS/ID sama.
+```html
+<div class="class_name" data-label="Series" data-max="6"></div>
+<div class="class_name" data-label="Series" data-max="6"></div>
+<div class="class_name" data-label="Series" data-max="6"></div>
+```
+```javascript
+let custom_post = new BloggerScript({
+  noImage: "URL_No_Thumbnail",
+  sizeImage: 's320'
+});
+
+const get_custom_post = (e, element) => {
+  let entry = custom_post.getFeed(e);
+  let html = '';
+  entry.forEach(item => {
+    html += `
+      <div class="post-item">
+        <img src="${item.image}" alt="${item.title}">
+        <h2>${item.title}</h2>
+        <p>${item.summary}</p>
+        <a href="${item.link}">Read more</a>
+      </div>
+    `;
+  });
+  if (element) {
+    if (entry.length === 0) {
+      element.innerHTML = `<span>No Post...</span>`;
+    } else {
+      element.innerHTML = html;
+    }
+  }
+};
+
+const run_custom_post = () => {
+  let get_locations = document.querySelectorAll('.class_name');
+  get_locations.forEach(get_location => {
+    if (get_location) {
+      let label_name = get_location.dataset.label || false;
+      let max = get_location.dataset.max || false;
+      custom_post.xhr(`/feeds/posts/default${label_name == false ? '' : `/-/${label_name}`}?alt=json-in-script&max-results=${max == false ? '' : `${max}`}`, (data) => get_custom_post(data, get_location));
+    }
+  });
 };
 
 document.addEventListener('DOMContentLoaded', () => {
