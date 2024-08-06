@@ -135,6 +135,9 @@ bloggerRelated.run('https://blog_url.blogspot.com/feeds/posts/default', function
   ```javascript
   let label = item.label.filter(i => ['Action','Adventure','Drama','Fantasy','Horror','Romance','Sci-Fi'].some(s => s == i));
   let filter_label = label.map(label => `<a href="/search/label/${label}?&max-results=7" rel="tag">${label}</a>`).join('');
+
+  let label = item.label.filter(l => ['Action','Adventure','Drama','Fantasy','Horror','Romance','Sci-Fi'].includes(l));
+  let filter_label = label.map(l => `<span>${l}</span>`).join('');
   ```
 
   ```javascript
