@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 #### Contoh Multi
 + Dengan memiliki CLASS/ID sama.
+  
   ```html
   <div class="class_name" data-label="Series" data-max="6"></div>
   <div class="class_name" data-label="Series" data-max="6"></div>
@@ -102,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   ```
 + Dengan memiliki CLASS/ID yang berbeda.
+  
   ```html
   <div class="class_name_1" data-label="Series" data-max="6"></div>
   <div class="class_name_atas" data-label="Series" data-max="6"></div>
