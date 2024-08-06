@@ -13,7 +13,7 @@ bloggerFeed.xhr('https://blog_url.blogspot.com/feeds/posts/default?alt=json-in-s
 yang sering digunakan
 
 ```html
-<div class="class_name"></div>
+<div class="class_name" data-label="Serie" data-max="6"></div>
 ```
 ```javascript
 let custom_post = new BloggerScript(
