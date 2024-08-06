@@ -52,55 +52,106 @@ document.addEventListener('DOMContentLoaded', () => {
 ```
 
 #### Contoh Multi
-Dengan syarat memiliki CLASS/ID sama.
-```html
-<div class="class_name" data-label="Series" data-max="6"></div>
-<div class="class_name" data-label="Series" data-max="6"></div>
-<div class="class_name" data-label="Series" data-max="6"></div>
-```
-```javascript
-let custom_post = new BloggerScript({
-  noImage: "URL_No_Thumbnail",
-  sizeImage: 's320'
-});
-
-const get_custom_post = (e, element) => {
-  let entry = custom_post.getFeed(e);
-  let html = '';
-  entry.forEach(item => {
-    html += `
-      <div class="post-item">
-        <img src="${item.image}" alt="${item.title}">
-        <h2>${item.title}</h2>
-        <p>${item.summary}</p>
-        <a href="${item.link}">Read more</a>
-      </div>
-    `;
++ Dengan memiliki CLASS/ID sama.
+  ```html
+  <div class="class_name" data-label="Series" data-max="6"></div>
+  <div class="class_name" data-label="Series" data-max="6"></div>
+  <div class="class_name" data-label="Series" data-max="6"></div>
+  ```
+  ```javascript
+  let custom_post = new BloggerScript({
+    noImage: "URL_No_Thumbnail",
+    sizeImage: 's320'
   });
-  if (element) {
-    if (entry.length === 0) {
-      element.innerHTML = `<span>No Post...</span>`;
-    } else {
-      element.innerHTML = html;
+  
+  const get_custom_post = (e, element) => {
+    let entry = custom_post.getFeed(e);
+    let html = '';
+    entry.forEach(item => {
+      html += `
+        <div class="post-item">
+          <img src="${item.image}" alt="${item.title}">
+          <h2>${item.title}</h2>
+          <p>${item.summary}</p>
+          <a href="${item.link}">Read more</a>
+        </div>
+      `;
+    });
+    if (element) {
+      if (entry.length === 0) {
+        element.innerHTML = `<span>No Post...</span>`;
+      } else {
+        element.innerHTML = html;
+      }
     }
-  }
-};
-
-const run_custom_post = () => {
-  let get_locations = document.querySelectorAll('.class_name');
-  get_locations.forEach(get_location => {
-    if (get_location) {
-      let label_name = get_location.dataset.label || false;
-      let max = get_location.dataset.max || false;
-      custom_post.xhr(`/feeds/posts/default${label_name == false ? '' : `/-/${label_name}`}?alt=json-in-script&max-results=${max == false ? '' : `${max}`}`, (data) => get_custom_post(data, get_location));
-    }
+  };
+  
+  const run_custom_post = () => {
+    let get_locations = document.querySelectorAll('.class_name');
+    get_locations.forEach(get_location => {
+      if (get_location) {
+        let label_name = get_location.dataset.label || false;
+        let max = get_location.dataset.max || false;
+        custom_post.xhr(`/feeds/posts/default${label_name == false ? '' : `/-/${label_name}`}?alt=json-in-script&max-results=${max == false ? '' : `${max}`}`, (data) => get_custom_post(data, get_location));
+      }
+    });
+  };
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    run_custom_post();
   });
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-  run_custom_post();
-});
-```
+  ```
++ Dengan memiliki CLASS/ID yang berbeda.
+  ```html
+  <div class="class_name_1" data-label="Series" data-max="6"></div>
+  <div class="class_name_atas" data-label="Series" data-max="6"></div>
+  <div class="class_name_tengah" data-label="Series" data-max="6"></div>
+  ```
+  ```javascript
+  let custom_post = new BloggerScript({
+    noImage: "URL_No_Thumbnail",
+    sizeImage: 's320'
+  });
+  
+  const get_custom_post = (e, element) => {
+    let entry = custom_post.getFeed(e);
+    let html = '';
+    entry.forEach(item => {
+      html += `
+        <div class="post-item">
+          <img src="${item.image}" alt="${item.title}">
+          <h2>${item.title}</h2>
+          <p>${item.summary}</p>
+          <a href="${item.link}">Read more</a>
+        </div>
+      `;
+    });
+    if (element) {
+      if (entry.length === 0) {
+        element.innerHTML = `<span>No Post...</span>`;
+      } else {
+        element.innerHTML = html;
+      }
+    }
+  };
+  
+  const run_custom_post = () => {
+    // Daftar kelas atau ID yang ingin ditangani
+    let selectors = ['.class_name_1', '.class_name_atas', '.class_name_tengah'];
+    selectors.forEach(selector => {
+      let get_location = document.querySelector(selector);
+      if (get_location) {
+        let label_name = get_location.dataset.label || false;
+        let max = get_location.dataset.max || false;
+        custom_post.xhr(`/feeds/posts/default${label_name == false ? '' : `/-/${label_name}`}?alt=json-in-script&max-results=${max == false ? '' : `${max}`}`, (data) => get_custom_post(data, get_location));
+      }
+    });
+  };
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    run_custom_post();
+  });
+  ```
 
 ### BloggerSitemap
 Mengambil seluruh postingan yang ada, bisa mengambil lebih dari 150.
