@@ -96,9 +96,28 @@ bloggerRelated.run('https://blog_url.blogspot.com/feeds/posts/default', function
 ### Label
 + `Regex`
   
-  ```javascript
-  let filter_label = item.label.find(i => /^\d+(\.\d{1,2})$/.test(i)) || '0.0';
-  ```
+  + Score :
+    ```javascript
+    let filter_label = item.label.find(i => /^\d+(\.\d{1,2})$/.test(i)) || '0.0';
+    ```
+  + Tahun :
+
+    ```javascript
+    let filter_label = item.label.find(i => /^[0-9]{4}$/.test(i)) || '';
+    ```
+
+  + Musim :
+
+    ```javascript
+    let filter_label = item.label.find(i => /^([Ww]inter|[Ss]pring|[Ss]ummer|[Ff]all) [0-9]{4}$/.test(i)) || '';
+    ```
+
+  + Menit :
+
+    ```javascript
+    let filter_label = item.label.find(i => /^[0-9]{2} [Mm]in$/.test(i)) || '';
+    ```
+    
 + `Single Label`
   
   ```javascript
