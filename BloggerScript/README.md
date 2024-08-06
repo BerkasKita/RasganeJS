@@ -122,6 +122,7 @@ bloggerRelated.run('https://blog_url.blogspot.com/feeds/posts/default', function
   
   ```javascript
   let filter_label = item.label.find(i => ['Completed','Delay','Ongoing'].some(s => s == i));
+  let filter_label = item.label.find(i => ['Completed','Delay','Ongoing'].includes(i));
   ```
 + `2 Label`
   
