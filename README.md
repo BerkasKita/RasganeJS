@@ -23,7 +23,7 @@ Pasang kode RasganeJS di atas `</head>`.
 Dapatkan file `RasganeJS.js`
 Tambahkan kode dari file tersebut ke dalam tag `<script>`.
 
-```
+```html
 <script type='text/javascript'>/*<![CDATA[*/
   /*Add Code Here*/
 /*]]>*/</script>
@@ -38,14 +38,14 @@ Fungsi ini akan mengubah semua elemen HTML dengan kelas .time yang berisi tangga
 
 ### Tag HTML
 
-```
+```html
 <div class="time" datetime="2023-11-11T12:01:14+08:00">2023-11-11T12:01:14+08:00</div>
 <div class="time">2013-11-12T12:01:14+08:00</div>
 ```
 
 Tambahkan kode JavaScript untuk memanggil fungsi get_updateTimes setelah halaman dimuat untuk mengubah semua elemen dengan class `.time`.
 
-```
+```html
 <script type='text/javascript'>
   document.addEventListener('DOMContentLoaded', (event) => {
     get_updateTimes();
@@ -54,7 +54,7 @@ Tambahkan kode JavaScript untuk memanggil fungsi get_updateTimes setelah halaman
 ```
 
 Dalam Javascript (console.log)
-```
+```javascript
 console.log(get_TimeAgo('2023-06-01T12:00:00Z'));
 ```
 
@@ -63,7 +63,7 @@ console.log(get_TimeAgo('2023-06-01T12:00:00Z'));
 #### Fungsi get_moveElement
 Fungsi ini memindahkan sebuah elemen HTML dari satu tempat ke tempat lain, atau menggantinya dengan teks atau tag HTML jika elemen yang akan dipindahkan tidak ditemukan.
 
-```
+```javascript
 get_moveElement('Data_Elemen', 'Tujuan_Elemen', 'Text/Tag HTML');
 ```
 
@@ -75,7 +75,7 @@ get_moveElement('Data_Elemen', 'Tujuan_Elemen', 'Text/Tag HTML');
 #### Fungsi get_moveElement2
 Fungsi ini memindahkan sebuah elemen HTML dari satu tempat ke tempat lain, atau menghapus elemen tujuan jika elemen yang akan dipindahkan tidak ditemukan.
 
-```
+```javascript
 get_moveElement2('Data_Elemen', 'Tujuan_Elemen');
 ```
 ##### Pejelasan
@@ -87,11 +87,11 @@ get_moveElement2('Data_Elemen', 'Tujuan_Elemen');
 ### Klik Random Post
 Fungsi ini menambahkan event listener ke elemen HTML yang dipilih untuk menampilkan postingan acak saat diklik.
 
-```
+```javascript
 get_random('ID/Class', 'Nama_Label');
 ```
 
-```
+```javascript
 get_random('ID/Class');
 ```
 
@@ -102,11 +102,11 @@ get_random('ID/Class');
 ### Up Button
 Fungsi ini menambahkan fungsionalitas ke elemen HTML yang berfungsi sebagai tombol "ke atas". Ketika tombol diklik, halaman akan menggulir ke atas secara halus. Selain itu, tombol dapat diberi kelas CSS tambahan saat pengguna menggulir ke bawah halaman.
 
-```
+```javascript
 get_up_button('ID/Class', 'Nama_Class');
 ```
 
-```
+```javascript
 get_up_button('ID/Class');
 ```
 
@@ -117,7 +117,7 @@ get_up_button('ID/Class');
 ### Show Year
 Fungsi ini mengambil tahun saat ini dan menampilkannya di elemen HTML yang dipilih berdasarkan selector yang diberikan.
 
-```
+```javascript
 get_year('ID/Class');
 ```
 
@@ -127,7 +127,7 @@ get_year('ID/Class');
 ### Tabs
 Fungsi ini mengatur fungsionalitas tab navigasi di halaman web. Ketika sebuah tab diklik, tab tersebut menjadi aktif dan menampilkan konten yang sesuai, sementara tab dan konten lainnya disembunyikan.
 
-```
+```html
 <div class="box_tabs">
   <nav data-tabs=".box_tabs .content">
     <span class="tab_cp__ active" data-name="tab_1">Tab 1</span>
@@ -138,30 +138,30 @@ Fungsi ini mengatur fungsionalitas tab navigasi di halaman web. Ketika sebuah ta
 </div>
 ```
 
-```
+```javascript
 get_tabs();
 ```
 
 ### Klik function
 Fungsi ini digunakan untuk menambahkan atau menghapus kelas atau ID pada elemen target saat tombol diklik. Fungsi ini juga menghapus kelas atau ID dari elemen lain yang ditentukan agar hanya satu elemen yang memiliki kelas atau ID tersebut pada satu waktu.
 
-```
+```javascript
 get_klik('class yang ditambah', 'class/id button klik', 'class/id target');
 ```
 
-```
+```javascript
 get_klik2('class yang ditambah', 'class/id button klik', 'class/id target');
 ```
 
 ### Custom Komen Disqus dan Blogger
-```
+```javascript
 get_comment('disqus', 'click'); // Untuk memuat komentar Disqus dengan klik
 ```
 
-```
+```javascript
 get_comment('disqus', 'viewport'); // Untuk memuat komentar Disqus ketika elemen masuk viewport
 ```
 
-```
+```javascript
 get_comment('blogger'); // Untuk memuat komentar blogger
 ```
