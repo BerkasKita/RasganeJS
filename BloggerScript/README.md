@@ -93,7 +93,7 @@ bloggerRelated.run('https://blog_url.blogspot.com/feeds/posts/default', function
 + `Horizontal` : https://1.bp.blogspot.com/-FReCec7n6RY/YSQPKYQ3GZI/AAAAAAAAALQ/68ope4pW8k0f4nEtHT74JUVroyigkNQtACLcBGAsYHQ/s320/No%2BImage%2BHorizontal.jpg
 + `Vertikal` : https://1.bp.blogspot.com/-XSp30PahyTM/YK37Rq_-M7I/AAAAAAAABCc/01K0sUhw-2YI7vr48wqMIAVoMLDEUdK2gCLcBGAsYHQ/s320/No%2BImage%2BBerkas%2BKita.jpg
 
-### Label
+### Filter Label
 + `Regex`
   
   + Score :
@@ -117,7 +117,7 @@ bloggerRelated.run('https://blog_url.blogspot.com/feeds/posts/default', function
     ```javascript
     let filter_label = item.label.find(i => /^[0-9]{2} [Mm]in$/.test(i)) || '';
     ```
-    
+
 + `Single Label`
   
   ```javascript
