@@ -6,15 +6,15 @@ Tersedia ✔ || Belum Tersedia ❌
 
 | Function | 1.0.0 | 1.0.1 |
 | ------ | ------ | ------ |
-| TimeAgo | ✔ | ❌ |
-| Move Element | ✔ | ❌ |
-| BloggerScript V.1.2.0 Custom | ✔ | ❌ |
-| Klik Random Post | ✔ | ❌ |
-| Up Button | ✔ | ❌ |
-| Show Year | ✔ | ❌ |
-| Tabs | ✔ | ❌ |
-| Klik function | ✔ | ❌ |
-| Custom Komen Disqus dan Blogger | ✔ | ❌ |
+| TimeAgo | ✔ | ✔ |
+| Move Element | ✔ | ✔ |
+| BloggerScript V.1.2.0 Custom | ✔ | ✔ |
+| Klik Random Post | ✔ | ✔ |
+| Up Button | ✔ | ✔ |
+| Show Year | ✔ | ✔ |
+| Tabs | ✔ | ✔ |
+| Klik function | ✔ | ✔ |
+| Custom Komen Disqus dan Blogger | ✔ | ✔ |
 
 ## Installation
 
