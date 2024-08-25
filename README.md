@@ -145,12 +145,16 @@ get_tabs();
 ### Klik function
 Fungsi ini digunakan untuk menambahkan atau menghapus kelas atau ID pada elemen target saat tombol diklik. Fungsi ini juga menghapus kelas atau ID dari elemen lain yang ditentukan agar hanya satu elemen yang memiliki kelas atau ID tersebut pada satu waktu.
 
+Fungsi `get_klik1` digunakan untuk menambahkan atau menghapus kelas atau ID pada elemen target ketika elemen pemicu diklik.
 ```javascript
-get_klik('class yang ditambah', 'class/id button klik', 'class/id target');
+get_klik1('add', 'class yang ditambah', 'class/id button klik', 'class/id target');
+get_klik1('remove', 'class yang ditambah', 'class/id button klik', 'class/id target');
 ```
 
+Fungsi `get_klik2` mirip dengan get_klik1, tetapi dengan tambahan fungsionalitas untuk menghapus kelas atau ID saat mengklik di luar elemen yang ditentukan.
 ```javascript
-get_klik2('class yang ditambah', 'class/id button klik', 'class/id target');
+get_klik2('add', 'class yang ditambah', 'class/id button klik', 'class/id target');
+get_klik2('remove', 'class yang ditambah', 'class/id button klik', 'class/id target');
 ```
 
 ### Custom Komen Disqus dan Blogger
