@@ -8,7 +8,7 @@ Tersedia ✔ || Belum Tersedia ❌
 | ------ | ------ | ------ |
 | TimeAgo | ✔ | ✔ |
 | Move Element | ✔ | ✔ |
-| BloggerScript V.1.2.0 Custom | ✔ | ✔ |
+| BloggerScript V.1.2.2 Custom | ✔ | ✔ |
 | Klik Random Post | ✔ | ✔ |
 | Up Button | ✔ | ✔ |
 | Show Year | ✔ | ✔ |
@@ -82,17 +82,17 @@ get_moveElement2('Data_Elemen', 'Tujuan_Elemen');
 + `Data_Elemen` : Selector dari elemen yang akan dipindahkan (misalnya, #data untuk elemen dengan id="data").
 + `Tujuan_Elemen` : Selector dari elemen tujuan (misalnya, #tujuan untuk elemen dengan id="tujuan").
 
-### BloggerScript V.1.2.0 Custom
+### BloggerScript V.1.2.2 Custom
 
 ### Klik Random Post
 Fungsi ini menambahkan event listener ke elemen HTML yang dipilih untuk menampilkan postingan acak saat diklik.
 
 ```javascript
-get_random('ID/Class', 'Nama_Label');
+get_Random('ID/Class', 'Nama_Label');
 ```
 
 ```javascript
-get_random('ID/Class');
+get_Random('ID/Class');
 ```
 
 ##### Pejelasan
